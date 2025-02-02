@@ -1,0 +1,33 @@
+events:
+  default:
+    nombreDeJoueurs: 5
+    active: true
+    commandesConsole:
+      - "lp user <joueur> permission set tag.100er true"
+      - "give <joueur> diamond 3"
+  vip:
+    nombreDeJoueurs: 3
+    active: true
+    commandesConsole:
+      - "lp user <joueur> permission set tag.vip true"
+      - "give <joueur> netherite_ingot 2"
+  pvp:
+    nombreDeJoueurs: 10
+    active: true
+    commandesConsole:
+      - "eco give <joueur> 500"
+      - "give <joueur> golden_apple 1"
+
+mysql:
+  host: "localhost"
+  port: 3306
+  database: "eventjoin"
+  username: "root"
+  password: "password"
+
+
+messages:
+  reward_received: "&a[Événement] Vous avez reçu une récompense pour être parmi les premiers connectés !"
+  event_reward_received: "&6[Événement] Vous avez reçu une récompense spéciale !"
+  already_rewarded: "&c[Événement] Vous avez déjà reçu cette récompense."
+  reset_success: "&a[Événement] La liste des joueurs récompensés a été réinitialisée."

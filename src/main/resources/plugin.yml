@@ -1,0 +1,16 @@
+name: EventJoin
+main: me.kairo.event.Main
+version: 1.0
+author: Kairo
+api-version: 1.21
+commands:
+  eventjoin:
+    description: Lance un mini-event avec récompenses
+    usage: /eventjoin <nombre> <commande>
+    permission: eventjoin.use
+  resetjoin:
+    description: Réinitialise la liste des joueurs récompensés
+    usage: /resetjoin
+    permission: eventjoin.admin
+  toggleevent:
+    permission: eventjoin.admin

@@ -1,0 +1,49 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+}
+
+group = 'fr.kairo'
+version = '1.0'
+
+java {
+    toolchain.languageVersion.set(JavaLanguageVersion.of(21))
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
+    maven { url 'https://papermc.io/repo/repository/maven-public/' }
+    maven { url 'https://enginehub.org/repo/' } // Correct URL for WorldEdit/WorldGuard
+    maven { url 'https://repo.dmulloy2.net/repository/public/' }
+    maven { url 'https://repo.extendedclip.com/content/repositories/placeholderapi/' }
+    maven { url 'https://jitpack.io' }
+    maven { url 'https://repo.imanity.dev/imanity-libraries/' }
+    maven { url 'https://repo.rosewooddev.io/repository/public/' }
+    maven { url 'https://repo.extendedclip.com/releases/' }
+    maven {
+        url = uri("https://repo.papermc.io/repository/maven-public/")
+    }
+}
+
+dependencies {
+    compileOnly("io.papermc.paper:paper-api:1.21.4-R0.1-SNAPSHOT")
+
+}
+
+
+
+
+
+
+tasks.shadowJar {
+    archiveClassifier.set('')
+
+
+
+
+    exclude 'META-INF/*.RSA', 'META-INF/*.SF', 'META-INF/*.DSA'
+}
+
+
+tasks.build.dependsOn tasks.shadowJar
